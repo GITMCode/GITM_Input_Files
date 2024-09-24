@@ -1,0 +1,89 @@
+
+#DEBUG
+0	debug level
+0	cpu to watch
+10.0	dt between normal code output to stdout
+F	usebarriers - forces the code to stop and wait more often
+
+#RESTART
+F
+
+#GRID
+20	    lons
+20	    lats
+-90.0	    minimum latitude to model
+90.0	    maximum latitude to model
+0.0	    start longitude to model
+0.0	    end longitude to model
+
+
+-----------------------------------------------------------
+Use almost all of the default settings for solvers and such
+
+#TIMESTART
+2011        year
+06        month
+13        day
+00        hour
+00        minute
+00        second
+
+#TIMEEND
+2011      year
+06        month
+16        day
+00        hour
+00        minute
+00        second
+
+#SAVEPLOTS
+7200.0		dt for writing restart files
+1		how many output files do you want
+3DALL		output style
+900		dt for output
+
+#APEX
+T		Use apex magnetic coordinate system
+
+#AMIEFILES
+none
+none
+
+b20110313_15n_omni.bin
+b20110313_15s_omni.bin
+
+#NGDC_INDICES
+DataIn/f107.txt
+
+#NOAAHPI_INDICES
+power.dat
+
+#SME_INDICES
+ae_20110610.txt      SME Filename
+none              onset time delay file
+T
+
+#FTAMODEL
+T                 Use FTA model of the aurora
+
+#NEWELLAURORA
+F                 Use Newell Ovation model of the aurora
+
+#MHD_INDICES
+imf.dat
+
+#EUV_DATA
+T
+UA/DataIn/FISM/fismflux_daily_2011.dat		Filename
+
+#DYNAMO
+T               dynamo is on!
+45.0            Latitude to start dynamo
+500             iterations to use for the solve
+1.0             minimum residual for the solver
+F               cowling conductivities
+40.0            longitudinal averaging
+F               use modraytrace
+
+#END
+
