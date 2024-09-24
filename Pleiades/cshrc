@@ -1,0 +1,71 @@
+# System-wide NAS-specific .cshrc component
+# $Id: global.cshrc 59 2008-05-30 17:45:16Z dschan $
+# Make sure modules command is defined
+
+set _loaded=$?MODULESHOME		# Remember if modules already loaded
+if ($?tcsh) then
+	set modules_shell="tcsh"
+else
+	set modules_shell="csh"
+endif
+source /usr/share/modules/init/$modules_shell
+
+if (! $_loaded) then
+	# Load default NAS modules
+	module load nas
+endif
+unset _loaded
+unset noclobber                           # Don't clobber file with cp/mv         
+
+# ---------------------------------------------------------
+# This stuff is important for getting the compiler correct:
+
+module load comp-intel/2016.2.181
+module load mpi-hpe/mpt
+
+#  1) gcc/6.2                 4) hdf4/4.2.12             7) netcdf/4.4.1.1_mpt     10) idl/8.1
+#  2) comp-intel/2018.3.222   5) szip/2.1.1              8) ncl/6.3.0
+#  3) mpi-sgi/mpt.2.15r20     6) hdf5/1.8.18_mpt         9) python3/3.7.0
+# ---------------------------------------------------------
+
+umask 077                               # Save umask                            
+
+# Source the global NAS .cshrc files This file contains definitions for         
+# the Path and umask values.                                                    
+source /usr/local/lib/global.cshrc
+
+# Interative Shell variables and settings                                       
+if (! $?prompt) exit                    #exit if not interactive                
+
+set cdpath = (. $HOME)
+set history=50                          # C shell history                       
+set savehist=100                        # history saved between logins          
+set ignoreeof                           # prevent accidental exit               
+set filec                               # file completion                       
+
+set USER = `id | sed "s/)/(/" | cut -d"(" -f2`
+
+setenv PATH .:~/bin:$PATH
+
+alias cd 'cd \!* ; set prompt = "$cwd:t% " '
+set prompt="$cwd:t% "      # prompt                                
+
+# Standard aliases                                                              
+alias brm /bin/rm
+alias purge '/bin/rm -f *~'
+alias rm /bin/rm -i                     # prompting remove                      
+alias em 'emacs -nw'
+
+alias mail /usr/sbin/Mail
+
+alias mv /bin/mv -i                     # prompting move                        
+alias cp /bin/cp -i                     # prompting copy                        
+alias sc source ~/.cshrc
+
+# This is is needed to set terminal type.                                       
+alias ts 'set noglob; eval `tset -sQ \!*`; unset noglob; set term=$TERM'
+
+# These are useful for checking the queue and quota:
+alias qsr 'qstat -u ajridley'
+alias sqr 'lfs quota -h -u ajridley /nobackupp17'
+
