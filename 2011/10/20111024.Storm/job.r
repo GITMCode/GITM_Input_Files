@@ -1,12 +1,6 @@
 #!/bin/csh
 #PBS -S /bin/csh
 #PBS -N g20111022r
-
-# set the number of CPU-s by changing select: nProc = select*mpiprocs
-#PBS -lselect=40:ncpus=20:model=ivy
-# of ivy. The faster nodes mean faster execution, but also more
-# charged to the account.
-
 #PBS -lselect=40:ncpus=20:model=ivy
 #PBS -l walltime=72:00:00
 
