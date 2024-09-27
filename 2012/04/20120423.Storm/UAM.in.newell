@@ -1,0 +1,98 @@
+
+#DEBUG
+0                 debug level (0 = no info, 10 = max info)
+0                 cpu to watch
+60.0              dt between normal code output to stdout
+F                 usebarriers - forces the code to stop and wait more often
+
+#RESTART
+T                 Restart GITM
+
+#TIMESTART
+2012              year
+04                month
+21                day
+00                hour
+00                minute
+00                second
+
+#TIMEEND
+2012              year
+04                month
+26                day
+00                hour
+00                minute
+00                second
+
+#GRID
+20                nBlocksLongitude
+40                nBlocksLatitude
+-90.000000        min latitude to model (deg)
+90.000000         max latitude to model (deg)
+0.000000          min longitude to model (deg)
+0.000000          max longitude to model (0 = whole earth) (deg)
+
+#SAVEPLOTS
+7200              dt for restarts
+2                 number of plot types
+3DALL             plot type
+300               dt for plot type 3DALL
+2DANC             plot type
+300               dt for plot type 2DANC
+
+#NGDC_INDICES
+UA/DataIn/f107.txt   no descriptor
+
+#EUV_DATA
+T                 Use FISM Solar Flux Data (daily)
+UA/DataIn/FISM/fismflux_daily_2012.dat   FISM Filename
+
+#FTAMODEL
+F                 Use FTA model of the aurora
+
+#SME_INDICES
+ae20120421.dat    SME Filename
+none              onset time delay file
+T                 Convert AE to HP
+
+#MHD_INDICES
+imf20120421.dat   imf input file
+
+#DYNAMO
+T                 UseDynamo
+45.0              Dynamo magnetic latitude boundary
+500               nIterations
+1.0               Max Residual
+F                 Include Cowling Conductances
+40.0              Longitude Averaging
+
+#APEX
+T                 no descriptor
+
+#MSISOBC
+T                 Shift the [O] density at the lower boundary by 6 months
+0.0               change the obateness of the Earth by this percent (0 = none)
+
+#AUSMSOLVER
+T                 Use AUSM+-up Solvers
+
+#CPUTIMEMAX
+258900.0          Maximum wallclock time to run in sec
+
+#F107
+143.4             data from /Users/ridley/Software/GITM/srcData/f107.txt
+116.3             81 day average of f107
+
+#FANGENERGY
+T                 Use Fang 2010 energy deposition
+
+#NEWELLAURORA
+T                 Use Newell Ovation model of the aurora
+T                 Use Diffuse Aurora
+T                 Use Monoenergetic Aurora
+F                 Use Wave driven Aurora
+T                 Remove spikes
+T                 Average patterns
+
+#END
+
