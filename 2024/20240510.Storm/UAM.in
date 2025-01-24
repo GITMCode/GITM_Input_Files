@@ -12,7 +12,7 @@ Gitm can stop and start again:
   - Can mv out and link to that directory
 
 #RESTART
-F		Restart Code
+T		Restart Code
 
 --------------------------------------------------------------------------
 start and end times:
@@ -21,7 +21,7 @@ start and end times:
 #TIMESTART
 2024		year
 05		month
-07		day
+08		day
 00		hour
 00		minute
 00		second
@@ -40,8 +40,8 @@ Set blocks in lon and lat.
   - res = (max - min) / num cells
 
 #GRID
-16		number of blocks in longitude
-16		number of blocks in latitude
+10		number of blocks in longitude
+20		number of blocks in latitude
 -90.0		minimum latitude to model
 90.0		maximum latitude to model
 0.0		longitude start to model (set to 0.0 for whole Earth)
@@ -51,10 +51,12 @@ Set blocks in lon and lat.
 Output file stuff
 
 #SAVEPLOTS
-7200.0		dt for writing restart files
-1		how many output files do you want
-3DNEU		second output style
-900.0		dt for output (1 every 5 min)
+3600.0		dt for writing restart files
+2		how many output files do you want
+3DALL		second output style
+300.0		dt for output (1 every 5 min)
+2DANC
+300.0
 
 
 If this is before 2019, f107 should work fine:
@@ -69,11 +71,6 @@ T						Use FISM solar flux data
 fism2024.txt
 
 
-#SATELLITES
-1
-grace.txt
-3DALL
-300.0
 
 
 ------------ Auroral Drivers ------------
@@ -100,9 +97,8 @@ This is the most common thing - specify an IMF file:
 #MHD_INDICES
 imf.txt
 
-
-#NOAAHPI_INDICES
-power.txt
+#FANGENERGY
+T
 
 Low-latitude dynamo (only run with higher res). Turn on for higher res sims:
 #DYNAMO
