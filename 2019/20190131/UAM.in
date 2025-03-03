@@ -19,18 +19,18 @@ start and end times:
   - don't change start time on restart (code will set correct time!)
 
 #TIMESTART
-2024		year
-05		month
-08		day
+2019		year
+1		month
+29		day
 00		hour
 00		minute
 00		second
 
 #TIMEEND
-2024		year
-05		month
-14		day
-00		hour
+2019		year
+1		month
+31		day
+16		hour
 00		minute
 00		second
 
@@ -40,7 +40,7 @@ Set blocks in lon and lat.
   - res = (max - min) / num cells
 
 #GRID
-10		number of blocks in longitude
+40		number of blocks in longitude
 20		number of blocks in latitude
 -90.0		minimum latitude to model
 90.0		maximum latitude to model
@@ -51,13 +51,18 @@ Set blocks in lon and lat.
 Output file stuff
 
 #SAVEPLOTS
-3600.0		dt for writing restart files
-2		how many output files do you want
+600.0		dt for writing restart files
+5		how many output files do you want
 3DALL		second output style
 300.0		dt for output (1 every 5 min)
+2DTEC
+60.
 2DANC
-300.0
-
+60.
+2DGEL
+60.
+3DION
+60.
 
 If this is before 2019, f107 should work fine:
 
@@ -68,10 +73,7 @@ From 1990 - 2018, it is best to use FISM (and need F107 too!)
 
 #EUV_DATA
 T						Use FISM solar flux data
-fism2024.txt
-
-
-
+fismflux_daily_2019.dat				Filename
 
 ------------ Auroral Drivers ------------
 
@@ -79,14 +81,19 @@ New auroral model from Wu and Ridley, which is driven by AU/AL/AE
 #FTAMODEL
 T                 Use FTA model of the aurora
 
+HPI
+1.0
+
 You need AU/AL/AE indices.  You can get this from SuperMAG, which can be
 downloaded using:
 srcPython/supermag_download_ae.py 20021221 20021222
 
+SME_INDICES
+F
+
 #SME_INDICES
-ae.txt
-none
-T
+ae_20190129.txt			SME Filename
+none              		onset time delay file
 
 ------------ E-Field Drivers ------------
 
@@ -95,14 +102,11 @@ srcPython/omni_download_write_swmf.py 20021221 20021222 -swmf
 
 This is the most common thing - specify an IMF file:
 #MHD_INDICES
-imf.txt
-
-#FANGENERGY
-T
+imf20190129.dat
 
 Low-latitude dynamo (only run with higher res). Turn on for higher res sims:
 #DYNAMO
-T		UseDynamo
+F		UseDynamo
 45.0		DynamoHighLatBoundary
 500		nItersMax
 1.0		MaxResidual
@@ -116,14 +120,6 @@ apex, so need to turn apex on!
 #APEX
 T
 
-
-#AURORAMODS
-T
-1.0
-F
-1.0
-
-
 -----------------------------------------------------------------
 Some new features:
 
@@ -136,5 +132,29 @@ Solver stuff:
 
 #AUSMSOLVER
 T       	Use AUSM+-up Solvers
+
+#AMIEFILES
+amgeo20190131N.bin
+amgeo20190131S.bin
+
+USEPULSATINGAURORA
+T		UsePulsatingAurora
+20		PAAve
+50 		PAEFlux
+120             PAPeriod
+22              PAMltCenter
+65              PALatCenter
+0.5             PAMltHalfWidth
+2.              PALatHalfWidth          
+	      
+#ELECTRODYNAMICS
+60.
+60.
+
+#CHEMISTRY
+T		UseIonChemistry
+T		UseIonAdvection
+T		UseNeutralChemistry
+
 
 #END

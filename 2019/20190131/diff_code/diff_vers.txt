@@ -1,0 +1,13 @@
+Files ../src/aurora.Earth.f90 and ../../../pulsating_aurora/GITM/src/aurora.Earth.f90 differ
+Files ../src/aurora.f90 and ../../../pulsating_aurora/GITM/src/aurora.f90 differ
+Files ../src/get_potential.f90 and ../../../pulsating_aurora/GITM/src/get_potential.f90 differ
+Files ../src/init_grid.f90 and ../../../pulsating_aurora/GITM/src/init_grid.f90 differ
+Files ../src/libEMPIRICALIE.a and ../../../pulsating_aurora/GITM/src/libEMPIRICALIE.a differ
+Files ../src/libEMPIRICALUA.a and ../../../pulsating_aurora/GITM/src/libEMPIRICALUA.a differ
+Files ../src/libINDICES.a and ../../../pulsating_aurora/GITM/src/libINDICES.a differ
+Files ../src/libSHARE.a and ../../../pulsating_aurora/GITM/src/libSHARE.a differ
+Files ../src/ModGITM.f90 and ../../../pulsating_aurora/GITM/src/ModGITM.f90 differ
+Files ../src/ModInputs.f90 and ../../../pulsating_aurora/GITM/src/ModInputs.f90 differ
+Files ../src/ModReadGitm3d.f90 and ../../../pulsating_aurora/GITM/src/ModReadGitm3d.f90 differ
+Files ../src/PostProcess.exe and ../../../pulsating_aurora/GITM/src/PostProcess.exe differ
+Files ../src/set_inputs.f90 and ../../../pulsating_aurora/GITM/src/set_inputs.f90 differ
