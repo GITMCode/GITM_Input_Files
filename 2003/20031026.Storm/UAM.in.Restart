@@ -12,7 +12,7 @@ Gitm can stop and start again:
   - Can mv out and link to that directory
 
 #RESTART
-F		Restart Code
+T		Restart Code
 
 --------------------------------------------------------------------------
 start and end times:
@@ -21,7 +21,7 @@ start and end times:
 #TIMESTART
 2003		year
 10		month
-26		day
+27		day
 00		hour
 00		minute
 00		second

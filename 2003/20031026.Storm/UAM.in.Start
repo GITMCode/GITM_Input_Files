@@ -21,15 +21,15 @@ start and end times:
 #TIMESTART
 2003		year
 10		month
-26		day
+27		day
 00		hour
 00		minute
 00		second
 
 #TIMEEND
 2003		year
-11		month
-02		day
+10		month
+29		day
 00		hour
 00		minute
 00		second
