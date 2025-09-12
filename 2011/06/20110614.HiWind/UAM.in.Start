@@ -42,8 +42,14 @@ Use almost all of the default settings for solvers and such
 3DALL		output style
 900		dt for output
 
-#APEX
-T		Use apex magnetic coordinate system
+#MSIS21
+T
+
+#ELECTRODYNAMICS
+FTA
+60
+Weimer
+60
 
 #AMIEFILES
 none
@@ -63,12 +69,6 @@ ae_20110610.txt      SME Filename
 none              onset time delay file
 T
 
-#FTAMODEL
-T                 Use FTA model of the aurora
-
-#NEWELLAURORA
-F                 Use Newell Ovation model of the aurora
-
 #MHD_INDICES
 imf.dat
 
@@ -84,6 +84,12 @@ T               dynamo is on!
 F               cowling conductivities
 40.0            longitudinal averaging
 F               use modraytrace
+
+#APEX
+T		Use apex magnetic coordinate system
+
+#AUSMSOLVER
+T                 Use AUSM+-up Solvers
 
 #END
 
