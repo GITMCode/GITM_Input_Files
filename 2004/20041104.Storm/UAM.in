@@ -40,8 +40,8 @@ Set blocks in lon and lat.
   - res = (max - min) / num cells
 
 #GRID
-16		number of blocks in longitude
-16		number of blocks in latitude
+10		number of blocks in longitude
+20		number of blocks in latitude
 -90.0		minimum latitude to model
 90.0		maximum latitude to model
 0.0		longitude start to model (set to 0.0 for whole Earth)
@@ -53,9 +53,14 @@ Output file stuff
 #SAVEPLOTS
 7200.0		dt for writing restart files
 1		how many output files do you want
-3DNEU		second output style
+3DALL		second output style
 900.0		dt for output (1 every 5 min)
 
+#SATELLITES
+1
+grace.txt
+3DALL
+300.0
 
 If this is before 2019, f107 should work fine:
 
@@ -68,19 +73,13 @@ From 1990 - 2018, it is best to use FISM (and need F107 too!)
 T						Use FISM solar flux data
 UA/DataIn/FISM/fismflux_daily_2004.dat		Filename
 
-
-#SATELLITES
-1
-grace.txt
-3DALL
-300.0
-
-
 ------------ Auroral Drivers ------------
 
-New auroral model from Wu and Ridley, which is driven by AU/AL/AE
-#FTAMODEL
-T                 Use FTA model of the aurora
+#ELECTRODYNAMICS
+FTA
+60
+Weimer
+60
 
 You need AU/AL/AE indices.  You can get this from SuperMAG, which can be
 downloaded using:
@@ -117,19 +116,17 @@ apex, so need to turn apex on!
 T
 
 
-#AURORAMODS
+AURORAMODS
 T
 1.0
 F
 1.0
 
-
 -----------------------------------------------------------------
 Some new features:
 
-#MSISOBC
-T		Shift the [O] density at the lower boundary by 6 months 
-0.0		change the obateness of the Earth by this percent (0 = none)
+#MSIS21
+T
 
 --------------------------------------------------------------------------
 Solver stuff:
