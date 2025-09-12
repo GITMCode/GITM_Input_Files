@@ -1,12 +1,14 @@
 #!/bin/sh
 
-# where to find gitm:
-GITM=~/Software/GITM
-
 # set the dates with a restart in the middle:
 START=20110924
 RESTART=20110926.1200
 END=20110929
+
+# ------------------------------------------------------------------
+
+# where to find gitm:
+GITM=~/Software/GITM
 
 # set number of lat and lon blocks:
 LATS=20
@@ -17,7 +19,7 @@ CPUS=$((${LATS}*${LONS}))
 WALLTIME=24
 
 # This is for the post processor on pleiades:
-echo "ridley\nmia\n/nobackup/Gitm/Runs/${START}.Storm/v1" > remote
+echo "ridley\nmia\n/nobackup/Gitm/Runs/${START}.Storm/vMSIS_60" > remote
 
 # Make two UAM.in files (start and restart):
 ${GITM}/srcPython/gitm_makerun.py -gitm=${GITM} -output=UAM.in -imf=find -sme=find -fism -dynamo -nlats=${LATS} -nlons=${LONS} -3dall=300 -2danc=300 -restart -cputimemax=${WALLTIME} -restarttime=${RESTART} ${START} ${END}
