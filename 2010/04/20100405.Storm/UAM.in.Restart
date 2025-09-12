@@ -1,0 +1,85 @@
+
+#DEBUG
+0                 debug level (0 = no info, 10 = max info)
+0                 cpu to watch
+60.0              dt between normal code output to stdout
+F                 usebarriers - forces the code to stop and wait more often
+
+#RESTART
+T                 Restart GITM
+
+#TIMESTART
+2010              year
+04                month
+04                day
+00                hour
+00                minute
+00                second
+
+#TIMEEND
+2010              year
+04                month
+08                day
+00                hour
+00                minute
+00                second
+
+#GRID
+10                nBlocksLongitude
+20                nBlocksLatitude
+-90.000000        min latitude to model (deg)
+90.000000         max latitude to model (deg)
+0.000000          min longitude to model (deg)
+0.000000          max longitude to model (0 = whole earth) (deg)
+
+#SAVEPLOTS
+7200              dt for restarts
+2                 number of plot types
+3DALL             plot type
+300               dt for plot type 3DALL
+2DANC             plot type
+300               dt for plot type 2DANC
+
+#ELECTRODYNAMICS
+FTA               Auroral Model to use
+60.0              How often to update it (s)
+Weimer05          Electric Potential Model to use
+60.0              How often to update it (s)
+
+#MHD_INDICES
+imf20100404.dat   imf input file
+
+#SME_INDICES
+ae20100404.dat    SME Filename
+none              onset time delay file
+T                 Convert AE to HP
+
+#NGDC_INDICES
+UA/DataIn/f107.txt   F107 file
+
+#EUV_DATA
+T                 Use FISM Solar Flux Data (daily)
+UA/DataIn/FISM/fismflux_daily_2010.dat   FISM Filename
+
+#DYNAMO
+T                 UseDynamo
+45.0              Dynamo magnetic latitude boundary
+500               nIterations
+1.0               Max Residual
+F                 Include Cowling Conductances
+40.0              Longitude Averaging
+
+#APEX
+T                 Use APEX coordinates and IGRF B-field
+
+#MSIS21
+T                 Use the latest version of MSIS (21)
+
+#AUSMSOLVER
+T                 Use AUSM+-up Solvers
+
+#CPUTIMEMAX
+86100.0           Maximum wallclock time to run in sec
+
+#END
+
