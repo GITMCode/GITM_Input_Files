@@ -1,8 +1,14 @@
 #!/bin/csh
 #PBS -S /bin/csh
 #PBS -N g20110924r
-#PBS -lselect=40:ncpus=20:model=ivy
-#PBS -l walltime=72:00:00
+
+# set the number of CPU-s by changing select: nProc = select*mpiprocs
+#PBS -lselect=10:ncpus=20:model=ivy
+# of ivy. The faster nodes mean faster execution, but also more
+# charged to the account.
+
+#PBS -lselect=10:ncpus=20:model=ivy
+#PBS -l walltime=24:00:00
 
 # the group list is the GID of the project:
 #PBS -W group_list=s2516
@@ -22,5 +28,5 @@ module load comp-intel/2016.2.181 mpi-hpe/mpt
 rm -f UAM.in ; ln -s UAM.in.Restart UAM.in
 
 # run the code with the right number of processors
-mpiexec -np 800 GITM.exe > log.txt
+mpiexec -np 200 GITM.exe > log.txt
 
