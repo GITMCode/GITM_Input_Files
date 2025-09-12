@@ -12,7 +12,7 @@ Gitm can stop and start again:
   - Can mv out and link to that directory
 
 #RESTART
-T		Restart Code
+F		Restart Code
 
 --------------------------------------------------------------------------
 start and end times:
@@ -75,9 +75,11 @@ fism2024.txt
 
 ------------ Auroral Drivers ------------
 
-New auroral model from Wu and Ridley, which is driven by AU/AL/AE
-#FTAMODEL
-T                 Use FTA model of the aurora
+#ELECTRODYNAMICS
+FTA
+60
+Weimer
+60
 
 You need AU/AL/AE indices.  You can get this from SuperMAG, which can be
 downloaded using:
@@ -97,9 +99,6 @@ This is the most common thing - specify an IMF file:
 #MHD_INDICES
 imf.txt
 
-#FANGENERGY
-T
-
 Low-latitude dynamo (only run with higher res). Turn on for higher res sims:
 #DYNAMO
 T		UseDynamo
@@ -117,7 +116,7 @@ apex, so need to turn apex on!
 T
 
 
-#AURORAMODS
+AURORAMODS
 T
 1.0
 F
@@ -127,9 +126,8 @@ F
 -----------------------------------------------------------------
 Some new features:
 
-#MSISOBC
-T		Shift the [O] density at the lower boundary by 6 months 
-0.0		change the obateness of the Earth by this percent (0 = none)
+#MSIS21
+T
 
 --------------------------------------------------------------------------
 Solver stuff:
