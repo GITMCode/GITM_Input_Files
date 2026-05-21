@@ -19,17 +19,17 @@ start and end times:
   - don't change start time on restart (code will set correct time!)
 
 #TIMESTART
-2003		year
-10		month
-27		day
+2002		year
+03		month
+21		day
 00		hour
 00		minute
 00		second
 
 #TIMEEND
-2003		year
-10		month
-29		day
+2002		year
+03		month
+23		day
 00		hour
 00		minute
 00		second
@@ -41,11 +41,11 @@ Set blocks in lon and lat.
 
 #GRID
 10		number of blocks in longitude
-20		number of blocks in latitude
+10		number of blocks in latitude
 -90.0		minimum latitude to model
 90.0		maximum latitude to model
 0.0		longitude start to model (set to 0.0 for whole Earth)
-0.0             longitude end to model (set to 0.0 for whole Earth)
+360.0             longitude end to model (set to 0.0 for whole Earth)
 
 --------------------------------------------------------------------------
 Output file stuff
@@ -54,7 +54,8 @@ Output file stuff
 7200.0		dt for writing restart files
 1		how many output files do you want
 3DALL		second output style
-300.0		dt for output (1 every 5 min)
+1800.0		dt for output (1 every 5 min)
+
 
 If this is before 2019, f107 should work fine:
 
@@ -65,25 +66,21 @@ From 1990 - 2018, it is best to use FISM (and need F107 too!)
 
 #EUV_DATA
 T						Use FISM solar flux data
-UA/DataIn/FISM/fismflux_daily_2003.dat		Filename
-
+UA/DataIn/FISM/fismflux_daily_2002.dat		Filename
 
 ------------ Auroral Drivers ------------
 
-#ELECTRODYNAMICS
-FTA
-60
-Weimer
-60
+New auroral model from Wu and Ridley, which is driven by AU/AL/AE
+#FTAMODEL
+T                 Use FTA model of the aurora
 
 You need AU/AL/AE indices.  You can get this from SuperMAG, which can be
 downloaded using:
 srcPython/supermag_download_ae.py 20021221 20021222
 
 #SME_INDICES
-ae.txt
-none
-T
+UA/DataIn/ae_20021221.txt		SME Filename
+none              		onset time delay file
 
 ------------ E-Field Drivers ------------
 
@@ -91,8 +88,14 @@ Can download data from OMNIWeb using:
 srcPython/omni_download_write_swmf.py 20021221 20021222 -swmf
 
 This is the most common thing - specify an IMF file:
-#MHD_INDICES
-imf.txt
+MHD_INDICES
+UA/DataIn/imf20021221.dat
+
+#SOLARWIND
+0.0		IMF Bx
+0.0		IMF By
+-2.0		IMF Bz
+400.0		Solar wind Vx
 
 Low-latitude dynamo (only run with higher res). Turn on for higher res sims:
 #DYNAMO
@@ -100,32 +103,28 @@ T		UseDynamo
 45.0		DynamoHighLatBoundary
 500		nItersMax
 1.0		MaxResidual
-F		IncludeCowling
+T		IncludeCowling
 40.0		LongitudinalAveraging
 F               UseNewTrace
-
-The default is to have apex off, since other planets don't have
-apex, so need to turn apex on!
-
-#APEX
-T
-
-#IONLIMITS
-100
-0.1
-1000
-1e6
 
 -----------------------------------------------------------------
 Some new features:
 
-#MSIS21
-T
+#MSISOBC
+T		Shift the [O] density at the lower boundary by 6 months 
+0.0		change the obateness of the Earth by this percent (0 = none)
 
 --------------------------------------------------------------------------
 Solver stuff:
 
 #AUSMSOLVER
 T       	Use AUSM+-up Solvers
+
+#TIDES
+F		UseMSISOnly
+F		UseMSISTides
+F		UseGSWMTides
+F		UseWACCMTides
+T       UseHmeTides
 
 #END
