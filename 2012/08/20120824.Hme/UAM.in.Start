@@ -1,6 +1,6 @@
 
 #DEBUG
-3                 debug level (0 = no info, 10 = max info)
+0                 debug level (0 = no info, 10 = max info)
 0                 cpu to watch
 60.0              dt between normal code output to stdout
 F                 usebarriers - forces the code to stop and wait more often
