@@ -1,0 +1,29 @@
+#!/bin/csh
+#PBS -S /bin/csh
+#PBS -N g20230421
+
+#PBS -lselect=1:ncpus=256:model=tur_ath
+#PBS -q long
+#PBS -lwalltime=24:00:00
+
+# the group list is the GID of the project:
+#PBS -W group_list=s3140
+#PBS -j oe
+
+# Send e-mail when job ends and begins:
+#PBS -m eb
+
+cd $PBS_O_WORKDIR
+
+# load the right module files.  These should match the
+# modules files in your cshrc or bashrc file:
+module switch PrgEnv-cray PrgEnv-intel
+
+# choose the right UAM.in file:
+rm -f UAM.in ; ln -s UAM.in.Start UAM.in
+#rm -f UAM.in ; ln -s UAM.in.Restart UAM.in
+
+# run the code with the right number of processors
+mpiexec -np 256 GITM.exe > log.txt
+
+
