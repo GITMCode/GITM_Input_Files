@@ -25,8 +25,8 @@ T                 Restart GITM
 00                second
 
 #GRID
-10                nBlocksLongitude
-20                nBlocksLatitude
+16                nBlocksLongitude
+16                nBlocksLatitude
 -90.000000        min latitude to model (deg)
 90.000000         max latitude to model (deg)
 0.000000          min longitude to model (deg)
@@ -71,15 +71,6 @@ F                 Include Cowling Conductances
 
 #APEX
 T                 no descriptor
-
-#MSIS21
-T
-
-#AUSMSOLVER
-T                 Use AUSM+-up Solvers
-
-#CPUTIMEMAX
-172500.0          Maximum wallclock time to run in sec
 
 #END
 

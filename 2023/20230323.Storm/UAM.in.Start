@@ -25,8 +25,8 @@ F                 Restart Code
 00                second
 
 #GRID
-10                nBlocksLongitude
-20                nBlocksLatitude
+16                nBlocksLongitude
+16                nBlocksLatitude
 -90.000000        min latitude to model (deg)
 90.000000         max latitude to model (deg)
 0.000000          min longitude to model (deg)
@@ -36,9 +36,9 @@ F                 Restart Code
 7200              dt for restarts
 2                 number of plot types
 3DALL             plot type
-900               dt for plot type 3DALL
+3600               dt for plot type 3DALL
 2DANC             plot type
-900               dt for plot type 2DANC
+3600               dt for plot type 2DANC
 
 #ELECTRODYNAMICS
 FTA               no descriptor
@@ -53,6 +53,7 @@ imf20230321.dat   imf input file
 sme20230323.dat   SME Filename
 none              onset time delay file
 T                 Convert AE to HP
+T
 
 #NGDC_INDICES
 UA/DataIn/f107.txt   no descriptor
@@ -71,15 +72,6 @@ F                 Include Cowling Conductances
 
 #APEX
 T                 no descriptor
-
-#MSIS21
-T                 run with msis21
-
-#AUSMSOLVER
-T                 Use AUSM+-up Solvers
-
-#CPUTIMEMAX
-172500.0          Maximum wallclock time to run in sec
 
 #END
 

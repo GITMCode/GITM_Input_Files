@@ -25,8 +25,8 @@ T                 Restart GITM
 00                second
 
 #GRID
-10                nBlocksLongitude
-20                nBlocksLatitude
+16                nBlocksLongitude
+16                nBlocksLatitude
 -90.000000        min latitude to model (deg)
 90.000000         max latitude to model (deg)
 0.000000          min longitude to model (deg)
@@ -36,9 +36,9 @@ T                 Restart GITM
 7200              dt for restarts
 2                 number of plot types
 3DALL             plot type
-300               dt for plot type 3DALL
+900               dt for plot type 3DALL
 2DANC             plot type
-300               dt for plot type 2DANC
+900               dt for plot type 2DANC
 
 #ELECTRODYNAMICS
 FTA               Auroral Model to use
@@ -71,15 +71,6 @@ F                 Include Cowling Conductances
 
 #APEX
 T                 Use APEX coordinates and IGRF B-field
-
-#MSIS21
-T                 Use the latest version of MSIS (21)
-
-#AUSMSOLVER
-T                 Use AUSM+-up Solvers
-
-#CPUTIMEMAX
-86100.0           Maximum wallclock time to run in sec
 
 #END
 

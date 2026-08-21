@@ -2,16 +2,12 @@
 #PBS -S /bin/csh
 #PBS -N g20230225
 
-# set the number of CPU-s by changing select: nProc = select*mpiprocs
-# ncpu should be fixed to 20 because there are 20 cores on each node
-# of ivy. The faster nodes mean faster execution, but also more
-# charged to the account.
-
-#PBS -lselect=10:ncpus=20:model=ivy
-#PBS -lwalltime=48:00:00
+#PBS -lselect=1:ncpus=256:model=tur_ath
+#PBS -q long
+#PBS -lwalltime=24:00:00
 
 # the group list is the GID of the project:
-#PBS -W group_list=s2516
+#PBS -W group_list=s3140
 #PBS -j oe
 
 # Send e-mail when job ends and begins:
@@ -21,12 +17,12 @@ cd $PBS_O_WORKDIR
 
 # load the right module files.  These should match the
 # modules files in your cshrc or bashrc file:
-module load comp-intel mpi-hpe
+module switch PrgEnv-cray PrgEnv-intel
 
 # choose the right UAM.in file:
 rm -f UAM.in ; ln -s UAM.in.Start UAM.in
 #rm -f UAM.in ; ln -s UAM.in.Restart UAM.in
 
 # run the code with the right number of processors
-mpiexec -np 200 GITM.exe > log.txt
+mpiexec -np 256 GITM.exe > log.txt
 
