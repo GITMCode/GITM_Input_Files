@@ -34,9 +34,11 @@ T		Restart Code
 
 #SAVEPLOTS
 7200.0		dt for writing restart files
-1		how many output files do you want
+2		how many output files do you want
 3DALL		second output style
 900.0		dt for output (1 every 5 min)
+2DANC
+900.0
 
 #NGDC_INDICES
 UA/DataIn/f107.txt
