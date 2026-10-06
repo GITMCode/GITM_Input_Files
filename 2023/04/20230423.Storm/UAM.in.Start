@@ -34,11 +34,9 @@ F                 Restart Code
 
 #SAVEPLOTS
 7200              dt for restarts
-2                 number of plot types
+1                 number of plot types
 3DALL             plot type
-900               dt for plot type 3DALL
-2DANC             plot type
-900               dt for plot type 2DANC
+3600              dt for plot type 3DALL
 
 #ELECTRODYNAMICS
 FTA               no descriptor
