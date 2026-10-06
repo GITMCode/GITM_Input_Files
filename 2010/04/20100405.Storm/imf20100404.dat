@@ -3,10 +3,13 @@ Downloaded from OMNIWeb and processed by omniweb_read.py
 
 No AlphaRatio was considered
 
+Added an extra day to make the code not crash
+
 #TIMEDELAY
 0.0
 
 #START
+ 2010 04 03 00 00 00 000    1.16    -5.67    -1.94  -511.70    -28.00     21.50    4.21    202991.0
  2010 04 04 00 00 00 000    1.16    -5.67    -1.94  -511.70    -28.00     21.50    4.21    202991.0
  2010 04 04 00 01 00 000    1.42    -5.71    -1.46  -511.70    -28.00     21.50    4.21    202991.0
  2010 04 04 00 02 00 000    1.52    -5.82    -0.65  -506.60    -19.30     31.70    4.33    186225.0

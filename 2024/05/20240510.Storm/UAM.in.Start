@@ -48,9 +48,10 @@ weimer05          no descriptor
 imf20240508.dat   imf input file
 
 #SME_INDICES
-ae20240508.dat    SME Filename
+sme20240508.dat    SME Filename
 none              onset time delay file
 T                 Convert AE to HP
+T
 
 #NGDC_INDICES
 UA/DataIn/f107.txt   no descriptor

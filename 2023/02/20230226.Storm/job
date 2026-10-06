@@ -1,6 +1,6 @@
 #!/bin/csh
 #PBS -S /bin/csh
-#PBS -N g20230225
+#PBS -N g230225
 
 #PBS -lselect=1:ncpus=256:model=tur_ath
 #PBS -q long
