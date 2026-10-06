@@ -34,11 +34,9 @@ F                 Restart Code
 
 #SAVEPLOTS
 7200              dt for restarts
-2                 number of plot types
+1                 number of plot types
 3DALL             plot type
 3600               dt for plot type 3DALL
-2DANC             plot type
-3600               dt for plot type 2DANC
 
 #ELECTRODYNAMICS
 FTA               Auroral Model to use
