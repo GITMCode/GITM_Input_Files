@@ -40,13 +40,6 @@ F                 Restart Code
 2DMEL
 1800
 
-#AURORAMODS
-T   NormalizeAuroraToHP     (logical)
-1.0   AveEFactor    (real)
-F   IsKappaAurora     (logical)
-3   AuroraKappa    (real)
-F   AllowAurWODiffuse (logical)
-80.0   MaxAveEAurora    (real)
 
 #NGDC_INDICES
 UA/DataIn/f107.txt   no descriptor
@@ -71,34 +64,14 @@ T                 Convert AE to HP
 
 #DYNAMO
 T                 UseDynamo
-45.0              Dynamo magnetic latitude boundary
+65.0              Dynamo magnetic latitude boundary
 500               nIterations
 1.0               Max Residual
 F                 Include Cowling Conductances
-40.0              Longitude Averaging
-
-#TIDES
-F
-T
-F
-F
-F
+10.0              Longitude Averaging
 
 #APEX
 T                 no descriptor
-
-#MSISOBC
-T		Shift the [O] density at the lower boundary by 6 months 
-0.0		change the obateness of the Earth by this percent (0 = none)
-
-#AUSMSOLVER
-T                 Use AUSM+-up Solvers
-
-#IONLIMITS
-100
-0.1
-10
-10
 
 
 #END
