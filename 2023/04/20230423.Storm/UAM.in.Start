@@ -36,7 +36,12 @@ F                 Restart Code
 7200              dt for restarts
 1                 number of plot types
 3DALL             plot type
-3600              dt for plot type 3DALL
+3600               dt for plot type 3DALL
+
+#ALTITUDE
+100.0
+1000.0
+T
 
 #ELECTRODYNAMICS
 FTA               no descriptor
@@ -48,9 +53,10 @@ weimer05          no descriptor
 imf20230421.dat   imf input file
 
 #SME_INDICES
-ae20230421.dat    SME Filename
+sme20230419.dat
 none              onset time delay file
 T                 Convert AE to HP
+T
 
 #NGDC_INDICES
 UA/DataIn/f107.txt   no descriptor
@@ -58,6 +64,7 @@ UA/DataIn/f107.txt   no descriptor
 #EUV_DATA
 T                 Use FISM Solar Flux Data (daily)
 UA/DataIn/FISM/fismflux_daily_2023.dat   FISM Filename
+0.0					 blend with euv model
 
 #DYNAMO
 T                 UseDynamo
@@ -71,4 +78,60 @@ F                 Include Cowling Conductances
 T                 no descriptor
 
 #END
+
+----------------------------------------------------------------------------------
+
+DON4SHACK
+T
+
+MSISOBC
+T
+-0.1
+
+THERMALCONDUCTION
+3.6e-4
+5.6e-4
+0.72
+
+
+DYNAMO
+T                 UseDynamo
+65.0              Dynamo magnetic latitude boundary
+500               nIterations
+1.0               Max Residual
+F                 Include Cowling Conductances
+40.0              Longitude Averaging
+0.05              DynamoFracPotentialCutoff - solver boundary
+T                 doDynamoHemisphericMirror - Doesn't change much. 
+T                 doUseMagnetoPotentialBCs - doesn't change much
+F                 doDynamoLatBlend - definitely not needed
+
+
+2DANC             plot type
+3600               dt for plot type 2DANC
+
+DIFFUSION
+T
+100.0
+0.0075
+0.00375
+
+NEUTRALHEATING
+0.05
+
+IONLIMITS
+100.0
+0.1
+10.0
+10.0
+
+USETESTVISCOSITY
+0.5
+
+CO2FOMICHEV
+F
+400.0
+
+MSIS21
+F
 

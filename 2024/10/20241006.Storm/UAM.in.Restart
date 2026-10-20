@@ -11,7 +11,7 @@ T                 Restart GITM
 #TIMESTART
 2024              year
 10                month
-05                day
+04                day
 00                hour
 00                minute
 00                second
@@ -32,6 +32,11 @@ T                 Restart GITM
 0.000000          min longitude to model (deg)
 0.000000          max longitude to model (0 = whole earth) (deg)
 
+#ALTITUDE
+100.0
+1000.0
+T
+
 #SAVEPLOTS
 7200              dt for restarts
 2                 number of plot types
@@ -50,9 +55,10 @@ weimer05          no descriptor
 imf20241005.dat   imf input file
 
 #SME_INDICES
-ae20241005.dat    SME Filename
+sme20241003.dat    SME Filename
 none              onset time delay file
 T                 Convert AE to HP
+T
 
 #NGDC_INDICES
 UA/DataIn/f107.txt   no descriptor

@@ -48,7 +48,7 @@ Weimer05          Electric Potential Model to use
 imf20100404.dat   imf input file
 
 #SME_INDICES
-ae20100404.dat    SME Filename
+sme20100401.dat    SME Filename
 none              onset time delay file
 T                 Convert AE to HP
 T

@@ -1,6 +1,6 @@
 #!/bin/csh
 #PBS -S /bin/csh
-#PBS -N g20230421
+#PBS -N g230421
 
 #PBS -lselect=1:ncpus=256:model=tur_ath
 #PBS -q long
@@ -24,6 +24,6 @@ rm -f UAM.in ; ln -s UAM.in.Start UAM.in
 #rm -f UAM.in ; ln -s UAM.in.Restart UAM.in
 
 # run the code with the right number of processors
-mpiexec -np 256 GITM.exe > log.txt
+mpiexec -np 256 GITM.exe > log.vDev2610
 
 
